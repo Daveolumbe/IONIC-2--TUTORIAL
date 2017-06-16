@@ -15,7 +15,10 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-    this.places = this.placesService.getPlace();
+   this.placesService.getPlaces()
+     .then(
+       (places) => this.places = places
+     );
   }
 
   onLoadNewPlace(){
